@@ -164,6 +164,7 @@ function addNewWord() {
         return;
     }
 
+    wordInput.value = '';
     words.push(newWord);
 }
 
