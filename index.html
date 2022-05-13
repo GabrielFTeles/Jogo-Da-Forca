@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div id="logo">
+            <img src="./assets/logo.svg" alt="">
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="menu-section">
+                <div class="menu-content">
+                    <button id="startBtn" class="main-button" onclick="goToGamePage()">Começar a jogar</button>
+                    <button id="addNewWordBtn" class="second-button" onclick="goToNewWordPage()">Adicionar nova palavra</button>
+                </div>
+            </section>
+
+            <section class="game-section hide">
+                <div class="game-content">
+                    <figure>
+                        <img src="./assets/tries/6-try.svg" alt="" id="man">
+                    </figure>
+            
+                    <div class="user-right-letters">
+                    </div>
+
+                    <div class="user-wrong-letters">
+                        <span></span>
+                    </div>
+
+                    <div class="buttons">
+                        <button id="newGameBtn" class="main-button" onclick="newGame()">Novo jogo</button>
+                        <button id="surrenderBtn" class="second-button" onclick="surrender()">Desistir</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="new-word-section hide">
+                <div class="new-word-content">
+                    <textarea name="word" id="wordInput" placeholder="Digite uma palavra ou frase"></textarea>
+
+                    <div class="buttons">
+                        <span><img src="./assets/exclamation.svg" alt=""> <p>Máx. de 8 letras</p></span>
+
+                        <button id="saveWordBtn" class="main-button" onclick="addNewWord()">Salvar</button>
+                        <button id="cancelBtn" class="second-button" onclick="returnToMenu()">Cancelar</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+<script src="script.js"></script>
+</html>
