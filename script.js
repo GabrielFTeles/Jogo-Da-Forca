@@ -5,7 +5,7 @@ const userRightLettersDiv = document.querySelector('.user-right-letters');
 const userWrongLettersDiv = document.querySelector('.user-wrong-letters');
 const hangmanImageFigure  = document.querySelector('.game-content figure');
 
-const letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'ç'];
+const acceptedLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'ç'];
 
 let typedKeys = [];
 
@@ -63,7 +63,6 @@ function newGame() {
     startGame();
 }
 
-
 function gameOver() {
     alert('Game Over!');
     isGameRunning = false;
@@ -84,7 +83,7 @@ function resetGame() {
     userRightLettersDiv.innerHTML = '';
     userWrongLettersDiv.innerHTML = '';
     hangmanImageFigure.innerHTML = '<img src="./assets/tries/6-try.svg" alt="" id="man">';
-    typedKeys = []
+    typedKeys = [];
     rightLettersQuantity = 0;
     tries = 6;
 }
@@ -97,13 +96,13 @@ function getRandomWord() {
 
 addEventListener('keydown', (event) => {
     if (isGameRunning) {
-        if (letters.includes(event.key)) {
-            userTypeKey(event.key);
+        if (acceptedLetters.includes(event.key)) {
+            userTypeKeyVerify(event.key);
         }
     }
 })
 
-function userTypeKey(key) {
+function userTypeKeyVerify(key) {
 
     if (!typedKeys.includes(key)) {
         typedKeys.push(key);
@@ -194,7 +193,7 @@ function isWordEmpty(word) {
 
 function isThereNotAcceptedCharacter(word) {
     for (let letter of word) {
-        if (letters.includes(letter)) {
+        if (acceptedLetters.includes(letter)) {
             continue;
         } else {
             return true;
