@@ -252,6 +252,8 @@ p {
 }
 
 .buttons {
+    position: relative;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -266,4 +268,30 @@ p {
 
 .buttons button + button {
     margin-top: 1.6rem;
+}
+
+.sucess-message-add {
+    position: absolute;
+
+    height: 4rem;
+    width: 30rem;
+
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
+    border-radius: 0.8rem;
+
+    display: grid;
+    place-items: center;
+
+    text-align: center;
+
+    background-color: var(--green-color);
+
+    color: white;
+    font-weight: 700;
+
+    visibility: hidden;
+    opacity: 0;
+
+    transition: 0.8s;
 }

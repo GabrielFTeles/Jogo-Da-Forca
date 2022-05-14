@@ -107,7 +107,7 @@ function surrender() {
 function resetGame() {
     lostGameMessageHide();
     wonGameMessageHide();
-    
+
     userRightLettersDiv.innerHTML = '';
     userWrongLettersDiv.innerHTML = '';
     hangmanImageFigure.innerHTML = '<img src="./assets/tries/6-try.svg" alt="" id="man">';
@@ -192,8 +192,21 @@ function addNewWord() {
         return;
     }
 
+    sucessAddedWord();
     wordInput.value = '';
     words.push(newWord);
+}
+
+function sucessAddedWord() {
+    const sucessAddedWord = document.querySelector('.sucess-message-add');
+
+    sucessAddedWord.style.visibility = 'initial';
+    sucessAddedWord.style.opacity = 'initial';
+
+    setInterval(() => {
+        sucessAddedWord.style.visibility = 'hidden';
+        sucessAddedWord.style.opacity = '0';
+    }, 4000);
 }
 
 function verifyWord(word) {
@@ -208,8 +221,6 @@ function verifyWord(word) {
     if (doesWordExceedMaxLength(word)) {
         return 'Excedeu o número máximo de letras';
     }
-
-    return;
 }
 
 
