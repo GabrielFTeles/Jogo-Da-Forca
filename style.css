@@ -293,5 +293,7 @@ p {
     visibility: hidden;
     opacity: 0;
 
+    user-select: none;
+
     transition: 0.8s;
 }
