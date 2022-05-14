@@ -5,6 +5,8 @@
     --body-background: hsl(227, 60%, 97%);
     --primary-color: hsl(213, 84%, 24%);
     --gray-color: hsl(210, 9%, 31%);
+    --green-color: hsl(158, 65%, 41%);
+    --red-color: hsl(0, 89%, 39%);
 
     --button-hover: hsl(213, 84%, 20%);
 
@@ -12,8 +14,7 @@
 }
 
 body {
-
-    height: 100vh;
+    height: auto;
 
     background-color: var(--body-background);
 
@@ -21,7 +22,7 @@ body {
 }
 
 main {
-    height: 84vh;
+    height: 80vh;
     width: 100%;
 }
 
@@ -171,6 +172,45 @@ p {
     justify-content: center;
     flex-wrap: wrap;
     gap: 1rem;
+}
+
+.won-game-message,
+.lost-game-message {
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: grid;
+    place-items: center;
+
+    text-align: center;
+
+    border-radius: 1rem;
+
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
+    width: 37rem;
+    height: 10rem;
+
+    color: white;
+    font-weight: 700;
+
+    visibility: hidden;
+    opacity: 0;
+
+    user-select: none;
+
+    transition: opacity 2s;
+}
+
+.won-game-message {
+    background-color: var(--green-color);
+}
+
+.lost-game-message {
+    background-color: var(--red-color);
 }
 
 

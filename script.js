@@ -64,13 +64,38 @@ function newGame() {
 }
 
 function gameOver() {
-    alert('Game Over!');
+    lostGameMessageShown();
     isGameRunning = false;
 }
 
+const lostGameMessageDiv = document.querySelector('.lost-game-message')
+
+function lostGameMessageShown() {
+    lostGameMessageDiv.style.visibility = 'initial';
+    lostGameMessageDiv.style.opacity = 'initial';
+}
+
+function lostGameMessageHide() {
+    lostGameMessageDiv.style.visibility = 'hidden';
+    lostGameMessageDiv.style.opacity = '0';
+}
+
 function gameWon() {
-    alert('Game Won!');
+    wonGameMessageShow();
     isGameRunning = false;
+}
+
+const wonGameMessageDiv = document.querySelector('.won-game-message')
+
+function wonGameMessageShow() {
+    wonGameMessageDiv.style.transform = 'translateX(-50%)'
+    wonGameMessageDiv.style.visibility = 'initial';
+    wonGameMessageDiv.style.opacity = 'initial';
+}
+
+function wonGameMessageHide() {
+    wonGameMessageDiv.style.visibility = 'hidden';
+    wonGameMessageDiv.style.opacity = '0';
 }
 
 function surrender() {
@@ -80,6 +105,9 @@ function surrender() {
 }
 
 function resetGame() {
+    lostGameMessageHide();
+    wonGameMessageHide();
+    
     userRightLettersDiv.innerHTML = '';
     userWrongLettersDiv.innerHTML = '';
     hangmanImageFigure.innerHTML = '<img src="./assets/tries/6-try.svg" alt="" id="man">';
