@@ -248,7 +248,11 @@ addEventListener('click', (event) => {
 })
 
 hiddenInput.addEventListener('input', (event) => {
-    if (acceptedLetters.includes(event.data)) {
-        userTypeKeyVerify(event.data);
+    if (isGameRunning) {
+        if (acceptedLetters.includes(event.target.value)) {
+            userTypeKeyVerify(event.target.value);
+        }
+    
+        event.target.value = '';
     }
 })
