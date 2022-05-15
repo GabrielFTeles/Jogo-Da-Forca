@@ -27,7 +27,7 @@ main {
 }
 
 header {
-    padding: 1rem;
+    display: none;
 }
 
 button {
@@ -128,19 +128,17 @@ p {
 /*== GAME SECTION ==========================*/
 
 .game-content {
-    padding-bottom: 4rem;
+    padding-block: 3rem 4rem;
 
     font-size: 2.4rem;
     line-height: 150%;
 }
 
-.game-content figure {
-    display: grid;
-    place-items: center;
+.game-content .hangman-img {
+    display: flex;
+    justify-content: center;
 
-    min-height: 36rem;
-
-    margin-bottom: 3rem;
+    height: 32rem;
 }
 
 .user-right-letters {
@@ -310,9 +308,17 @@ p {
 @media (min-width: 768px) {
     header {
         padding: 2.4rem 1.6rem;
+
+        display: block;
     }
 
     .game-content {
-        padding-block: 2rem 4rem;
+        padding-block: 0 4rem;
+    }
+
+    .game-content .hangman-img {
+        height: 35.2rem;
+
+        margin-bottom: 3rem;
     }
 }

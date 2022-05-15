@@ -3,7 +3,7 @@ const gameSection         = document.querySelector('.game-section');
 const newWordSection      = document.querySelector('.new-word-section');
 const userRightLettersDiv = document.querySelector('.user-right-letters');
 const userWrongLettersDiv = document.querySelector('.user-wrong-letters');
-const hangmanImageFigure  = document.querySelector('.game-content figure');
+const hangmanImageDiv  = document.querySelector('.hangman-img');
 
 const acceptedLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'ç'];
 
@@ -110,7 +110,7 @@ function resetGame() {
 
     userRightLettersDiv.innerHTML = '';
     userWrongLettersDiv.innerHTML = '';
-    hangmanImageFigure.innerHTML = '<img src="./assets/tries/6-try.svg" alt="" id="man">';
+    hangmanImageDiv.innerHTML = '<img src="./assets/tries/6-try.svg" alt="" id="man">';
     
     typedKeys = [];
     rightLettersQuantity = 0;
@@ -181,7 +181,7 @@ function wrongLetter(key) {
 }
 
 function hangmanImageUpdate(whatTryIsUser) {
-    hangmanImageFigure.innerHTML = `<img src="./assets/tries/${whatTryIsUser}-try.svg" alt="" id="man">` 
+    hangmanImageDiv.innerHTML = `<img src="./assets/tries/${whatTryIsUser}-try.svg" alt="" id="man">` 
 }
 
 
