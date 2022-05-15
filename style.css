@@ -215,10 +215,10 @@ p {
 
 .hidden-input {
     position: absolute;
-    top: -10rem;
+    top: -1000rem;
 
-
-    visibility: hidden;
+    opacity: 0;
+    color: transparent;
 }
 
 
