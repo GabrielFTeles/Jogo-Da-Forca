@@ -245,3 +245,11 @@ function isThereNotAcceptedCharacter(word) {
 function doesWordExceedMaxLength(word) {
     return word.length > maxLenghtWord;
 }
+
+
+//event to work on mobile.
+addEventListener('click', () => {
+    if (isGameRunning === true) {
+        document.querySelector('.hidden-input').focus();
+    }
+})

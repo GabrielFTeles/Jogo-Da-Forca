@@ -213,6 +213,15 @@ p {
     background-color: var(--red-color);
 }
 
+.hidden-input {
+    position: absolute;
+    top: -10rem;
+
+
+    visibility: hidden;
+}
+
+
 
 
 /*== NEW WORD SECTION ==========================*/
