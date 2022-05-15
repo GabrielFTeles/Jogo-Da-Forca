@@ -89,7 +89,6 @@ function gameWon() {
 const wonGameMessageDiv = document.querySelector('.won-game-message')
 
 function wonGameMessageShow() {
-    wonGameMessageDiv.style.transform = 'translateX(-50%)'
     wonGameMessageDiv.style.visibility = 'initial';
     wonGameMessageDiv.style.opacity = 'initial';
 }
