@@ -17,7 +17,6 @@ let rightLettersQuantity = 0;
 let isGameRunning = false;
 
 const maxLenghtWord = 8;
-
 let tries = 6;
 
 let actualPage = menuSection;
