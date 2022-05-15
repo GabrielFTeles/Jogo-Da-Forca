@@ -125,6 +125,8 @@ function getRandomWord() {
 
 function userTypeKeyVerify(key) {
 
+    key = key.toLowerCase();
+
     if (!typedKeys.includes(key)) {
         typedKeys.push(key);
     } else {
