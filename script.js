@@ -7,18 +7,20 @@ const hangmanImageFigure  = document.querySelector('.game-content figure');
 
 const acceptedLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'ç'];
 
-let typedKeys = [];
-
 const words = ['praça', 'pedir', 'porta'];
+
+let typedKeys = [];
 
 let selectedWord;
 let rightLettersQuantity = 0;
 
 let isGameRunning = false;
 
-let actualPage = menuSection;
+const maxLenghtWord = 8;
 
 let tries = 6;
+
+let actualPage = menuSection;
 
 function goToGamePage() {
     actualPage.classList.add('hide');
@@ -64,13 +66,13 @@ function newGame() {
 }
 
 function gameOver() {
-    lostGameMessageShown();
+    lostGameMessageShow();
     isGameRunning = false;
 }
 
 const lostGameMessageDiv = document.querySelector('.lost-game-message')
 
-function lostGameMessageShown() {
+function lostGameMessageShow() {
     lostGameMessageDiv.style.visibility = 'initial';
     lostGameMessageDiv.style.opacity = 'initial';
 }
@@ -111,6 +113,7 @@ function resetGame() {
     userRightLettersDiv.innerHTML = '';
     userWrongLettersDiv.innerHTML = '';
     hangmanImageFigure.innerHTML = '<img src="./assets/tries/6-try.svg" alt="" id="man">';
+    
     typedKeys = [];
     rightLettersQuantity = 0;
     tries = 6;
@@ -242,5 +245,5 @@ function isThereNotAcceptedCharacter(word) {
 }
 
 function doesWordExceedMaxLength(word) {
-    return word.length > 8;
+    return word.length > maxLenghtWord;
 }
