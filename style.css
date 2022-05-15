@@ -138,7 +138,8 @@ p {
     display: flex;
     justify-content: center;
 
-    height: 32rem;
+    min-height: 32rem;
+    max-height: 32rem;
 }
 
 .user-right-letters {
@@ -317,7 +318,8 @@ p {
     }
 
     .game-content .hangman-img {
-        height: 35.2rem;
+        min-height: 35.2rem;
+        max-height: 35.2rem;
 
         margin-bottom: 3rem;
     }
