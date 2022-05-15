@@ -248,8 +248,8 @@ function doesWordExceedMaxLength(word) {
 
 
 //event to work on mobile.
-addEventListener('click', () => {
-    if (isGameRunning === true) {
+gameSection.addEventListener('click', () => {
+    if (isGameRunning) {
         document.querySelector('.hidden-input').focus();
     }
 })
