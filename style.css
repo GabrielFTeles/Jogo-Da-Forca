@@ -27,7 +27,7 @@ main {
 }
 
 header {
-    padding: 2.4rem 1.6rem;
+    padding: 1rem;
 }
 
 button {
@@ -128,7 +128,7 @@ p {
 /*== GAME SECTION ==========================*/
 
 .game-content {
-    padding-block: 4rem;
+    padding-bottom: 4rem;
 
     font-size: 2.4rem;
     line-height: 150%;
@@ -305,4 +305,14 @@ p {
     user-select: none;
 
     transition: 0.8s;
+}
+
+@media (min-width: 768px) {
+    header {
+        padding: 2.4rem 1.6rem;
+    }
+
+    .game-content {
+        padding-block: 2rem 4rem;
+    }
 }

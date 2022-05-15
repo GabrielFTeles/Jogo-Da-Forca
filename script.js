@@ -250,8 +250,6 @@ function doesWordExceedMaxLength(word) {
 //event to work on mobile.
 addEventListener('click', (event) => {
     if (isGameRunning) {
-        alert('event')
         document.querySelector('.hidden-input').focus();
     }
-    console.log(event)
 })
