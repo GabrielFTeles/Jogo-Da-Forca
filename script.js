@@ -246,10 +246,15 @@ function doesWordExceedMaxLength(word) {
     return word.length > maxLenghtWord;
 }
 
+const hiddenInput = document.querySelector('.hidden-input');
 
 //event to work on mobile.
 addEventListener('click', (event) => {
     if (isGameRunning) {
-        document.querySelector('.hidden-input').focus();
+        hiddenInput.focus();
     }
+})
+
+hiddenInput.addEventListener('input', (event) => {
+    userTypeKeyVerify(event.data)
 })
