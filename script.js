@@ -123,14 +123,6 @@ function getRandomWord() {
     selectedWord = words[randomIndex];
 }
 
-addEventListener('keydown', (event) => {
-    if (isGameRunning) {
-        if (acceptedLetters.includes(event.key)) {
-            userTypeKeyVerify(event.key);
-        }
-    }
-})
-
 function userTypeKeyVerify(key) {
 
     if (!typedKeys.includes(key)) {
@@ -256,5 +248,7 @@ addEventListener('click', (event) => {
 })
 
 hiddenInput.addEventListener('input', (event) => {
-    userTypeKeyVerify(event.data)
+    if (acceptedLetters.includes(event.data)) {
+        userTypeKeyVerify(event.data);
+    }
 })
