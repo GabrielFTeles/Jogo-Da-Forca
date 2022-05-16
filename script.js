@@ -124,9 +124,6 @@ function getRandomWord() {
 }
 
 function userTypeKeyVerify(key) {
-
-    key = key.toLowerCase();
-
     if (!typedKeys.includes(key)) {
         typedKeys.push(key);
     } else {
@@ -251,8 +248,10 @@ addEventListener('click', (event) => {
 
 hiddenInput.addEventListener('input', (event) => {
     if (isGameRunning) {
-        if (acceptedLetters.includes(event.target.value)) {
-            userTypeKeyVerify(event.target.value);
+        const key = event.target.value.toLowerCase();
+
+        if (acceptedLetters.includes(key)) {
+            userTypeKeyVerify(key);
         }
     
         event.target.value = '';
