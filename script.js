@@ -3,7 +3,7 @@ const gameSection         = document.querySelector('.game-section');
 const newWordSection      = document.querySelector('.new-word-section');
 const userRightLettersDiv = document.querySelector('.user-right-letters');
 const userWrongLettersDiv = document.querySelector('.user-wrong-letters');
-const hangmanImageDiv  = document.querySelector('.hangman-img');
+const hangmanImageDiv     = document.querySelector('.hangman-img');
 
 const acceptedLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'ç'];
 
@@ -64,12 +64,15 @@ function newGame() {
     startGame();
 }
 
+const lostGameMessageDiv = document.querySelector('.lost-game-message')
+const failSound = new Audio('./assets/fail.mp3')
+
 function gameOver() {
     lostGameMessageShow();
+    failSound.play();
     isGameRunning = false;
 }
 
-const lostGameMessageDiv = document.querySelector('.lost-game-message')
 
 function lostGameMessageShow() {
     lostGameMessageDiv.style.visibility = 'initial';
@@ -81,12 +84,15 @@ function lostGameMessageHide() {
     lostGameMessageDiv.style.opacity = '0';
 }
 
+const wonGameMessageDiv = document.querySelector('.won-game-message')
+const winSound = new Audio('./assets/win.mp3')
+
 function gameWon() {
     wonGameMessageShow();
+    winSound.play();
     isGameRunning = false;
 }
 
-const wonGameMessageDiv = document.querySelector('.won-game-message')
 
 function wonGameMessageShow() {
     wonGameMessageDiv.style.visibility = 'initial';
